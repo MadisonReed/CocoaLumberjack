@@ -96,21 +96,27 @@
  * Documentation/CustomLogLevels.md
  **/
 
+#warning JZ Locally modified
 typedef NS_OPTIONS(NSUInteger, DDLogFlag) {
-    DDLogFlagError      = (1 << 0), // 0...00001
-    DDLogFlagWarning    = (1 << 1), // 0...00010
-    DDLogFlagInfo       = (1 << 2), // 0...00100
-    DDLogFlagDebug      = (1 << 3), // 0...01000
-    DDLogFlagVerbose    = (1 << 4)  // 0...10000
+    DDLogFlagDev        = (1 << 0), // 0...0000001
+    DDLogFlagFatal      = (1 << 1), // 0...0000010
+    DDLogFlagError      = (1 << 2), // 0...0000100
+    DDLogFlagWarning    = (1 << 3), // 0...0001000
+    DDLogFlagInfo       = (1 << 4), // 0...0010000
+    DDLogFlagDebug      = (1 << 5), // 0...0100000
+    DDLogFlagVerbose    = (1 << 6)  // 0...1000000
 };
 
+#warning JZ Locally modified
 typedef NS_ENUM(NSUInteger, DDLogLevel) {
     DDLogLevelOff       = 0,
-    DDLogLevelError     = (DDLogFlagError),                       // 0...00001
-    DDLogLevelWarning   = (DDLogLevelError   | DDLogFlagWarning), // 0...00011
-    DDLogLevelInfo      = (DDLogLevelWarning | DDLogFlagInfo),    // 0...00111
-    DDLogLevelDebug     = (DDLogLevelInfo    | DDLogFlagDebug),   // 0...01111
-    DDLogLevelVerbose   = (DDLogLevelDebug   | DDLogFlagVerbose), // 0...11111
+    DDLogLevelDev       = (DDLogFlagDev),                         // 0...0000001
+    DDLogLevelFatal     = (DDLogLevelDev     | DDLogFlagFatal),   // 0...0000011
+    DDLogLevelError     = (DDLogLevelFatal   | DDLogFlagError),   // 0...0000111
+    DDLogLevelWarning   = (DDLogLevelError   | DDLogFlagWarning), // 0...0001111
+    DDLogLevelInfo      = (DDLogLevelWarning | DDLogFlagInfo),    // 0...0011111
+    DDLogLevelDebug     = (DDLogLevelInfo    | DDLogFlagDebug),   // 0...0111111
+    DDLogLevelVerbose   = (DDLogLevelDebug   | DDLogFlagVerbose), // 0...1111111
     DDLogLevelAll       = NSUIntegerMax                           // 1111....11111 (DDLogLevelVerbose plus any other flags)
 };
 
