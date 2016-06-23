@@ -74,7 +74,7 @@
 /**
  * Ready to use log macros with no context or tag.
  **/
-#warning JZ Locally modified
+// MR modification
 #define DDLogDev(frmt, ...)     LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagDev,     0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 #define DDLogFatal(frmt, ...)   LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagFatal,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 #define DDLogError(frmt, ...)   LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, DDLogFlagError,   0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)

@@ -96,7 +96,7 @@
  * Documentation/CustomLogLevels.md
  **/
 
-#warning JZ Locally modified
+// MR modification
 typedef NS_OPTIONS(NSUInteger, DDLogFlag) {
     DDLogFlagDev        = (1 << 0), // 0...0000001
     DDLogFlagFatal      = (1 << 1), // 0...0000010
@@ -107,7 +107,7 @@ typedef NS_OPTIONS(NSUInteger, DDLogFlag) {
     DDLogFlagVerbose    = (1 << 6)  // 0...1000000
 };
 
-#warning JZ Locally modified
+// MR modification
 typedef NS_ENUM(NSUInteger, DDLogLevel) {
     DDLogLevelOff       = 0,
     DDLogLevelDev       = (DDLogFlagDev),                         // 0...0000001
